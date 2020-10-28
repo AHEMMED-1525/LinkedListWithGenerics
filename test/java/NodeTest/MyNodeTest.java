@@ -38,7 +38,7 @@ public class MyNodeTest {
     }
     //Append the node to last
     @Test
-    public void given3Numbers_WhenAddedToLinkedList_ShouldBeAppendedToLast()
+    public void given3NumbersWhenAddedToLinkedListShouldBeAppendedToLast()
     {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
@@ -55,7 +55,7 @@ public class MyNodeTest {
     }
     // Insert the node in between the nodes
     @Test
-    public void given3Numbers_WhenInserting2ndInBetween_ShouldPassLinkedListTest()
+    public void given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListTest()
     {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
@@ -72,7 +72,7 @@ public class MyNodeTest {
     }
     // Delete First Element of Sequence
     @Test
-    public void givenFirstElementWhenDelete()
+    public void givenFirstElementWhenDeletedShouldPassLinkedListResult()
     {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
