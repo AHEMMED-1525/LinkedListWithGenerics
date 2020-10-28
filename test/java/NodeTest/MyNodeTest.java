@@ -126,4 +126,26 @@ public class MyNodeTest {
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void givenLinkedListWhenInsertingPositionShouldPassLinkedListTest() 
+    {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> myInsertionNode = new MyNode<>(40);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+
+        INode searchNode = myLinkedList.index(30);
+
+        myLinkedList.insert(searchNode , myInsertionNode);
+
+        boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.head.getNext().getNext().equals(myInsertionNode) && myLinkedList.tail.equals(myThirdNode);
+        Assert.assertTrue(result);
+    }
+
 }

@@ -82,4 +82,13 @@ public class MyLinkedList {
 	            return false;
 
 	    }
+	    public <E> INode index(E searchKey) 
+	    {
+	        INode tempNode = this.head;
+	        while (tempNode.getKey() != searchKey)
+	        {
+	            tempNode = tempNode.getNext();
+	        }
+	        return tempNode;
+	    }
 }
