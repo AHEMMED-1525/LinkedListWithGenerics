@@ -4,10 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class MyNodeTest {
+	// Creating 3 nodes
 	@Test
 	public void given3NumbersWhenLinkedShouldPassedLinkedListTest() 
-	{
-		
+	{		
 		MyNode<Integer> myFirstNode = new MyNode<>(56);										// Initializing each node with a key 
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
 		MyNode<Integer> myThirdNode = new MyNode<>(70);
@@ -19,9 +19,10 @@ public class MyNodeTest {
 						 mySecondNode.getNext().equals(myThirdNode);
 		Assert.assertTrue(true);
 	}
+	// Adding to the top
     @Test
-    public void given3Numbers_WhenAddedToLinkedList_ShouldBeAddedToTop() {
-        
+    public void given3Numbers_WhenAddedToLinkedList_ShouldBeAddedToTop()
+    {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(56);
@@ -36,9 +37,10 @@ public class MyNodeTest {
         boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myFirstNode);
         Assert.assertTrue(result);
     }
+    //Append the node to last
     @Test
-    public void given3Numbers_WhenAddedToLinkedList_ShouldBeAppendedToLast() {
-       
+    public void given3Numbers_WhenAddedToLinkedList_ShouldBeAppendedToLast()
+    {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(56);
@@ -49,6 +51,23 @@ public class MyNodeTest {
         myLinkedList.append(myFirstNode);
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
+        boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
+        Assert.assertTrue(result);
+    }
+    // Insert the node in between the nodes
+    @Test
+    public void given3Numbers_WhenInserting2ndInBetween_ShouldPassLinkedListTest()
+    {
+        MyNode<Integer> myFirstNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(56);
+
+        //create a linked list
+        MyLinkedList myLinkedList = new MyLinkedList();
+        //add nodes to the linked list
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.insert(myFirstNode , mySecondNode);
         boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
         Assert.assertTrue(result);
     }
