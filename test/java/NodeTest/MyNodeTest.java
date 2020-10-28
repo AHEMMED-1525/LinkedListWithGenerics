@@ -12,7 +12,7 @@ public class MyNodeTest {
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
 		MyNode<Integer> myThirdNode = new MyNode<>(70);
 		
-		myFirstNode.setNext(mySecondNode);								   	// Set next node for each node 	
+		myFirstNode.setNext(mySecondNode);							 // Set next node for each node 	
 		mySecondNode.setNext(myThirdNode);
 		
 		boolean result = myFirstNode.getNext().equals(mySecondNode) &&
