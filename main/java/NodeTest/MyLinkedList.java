@@ -91,4 +91,36 @@ public class MyLinkedList {
 	        }
 	        return tempNode;
 	    }
+	    // Remove the newly added key value
+	    public INode remove(INode searchNode) {
+	        INode firstNode = this.head;            
+	        INode temp1Node = this.head;
+	        while (temp1Node != searchNode){       
+	            temp1Node = temp1Node.getNext();
+	        }
+	        this.head = temp1Node;                  
+	        popFirst();
+	        INode LastNode = this.head;              
+	        this.head = firstNode;                 
+	        INode temp2Node = this.head;
+	        while (temp2Node.getNext() != searchNode) {
+	            temp2Node = temp2Node.getNext();
+	        }
+	        temp2Node.setNext(LastNode); 
+	        return this.head;
+	    }
+	    // Method to calculate libked List Size
+	    public int Listsize() {                        
+	        int size = 0;
+	        if (this.head == null)
+	            return size;
+	        else
+	            size = 1;
+	        INode tempNode = this.head;
+	        while (tempNode.getNext() != null ) {
+	            tempNode = tempNode.getNext();
+	            size++;
+	        }
+	        return size;
+	    }
 }

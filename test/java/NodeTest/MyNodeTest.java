@@ -147,5 +147,32 @@ public class MyNodeTest {
         boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.head.getNext().getNext().equals(myInsertionNode) && myLinkedList.tail.equals(myThirdNode);
         Assert.assertTrue(result);
     }
+    
+    /*
+     * 1. Search the key value to delete
+     * 2.delete node 
+     * 3.Show the  size of newly modified list*/
+    @Test
+    public void givenLinkedList_AfterDeletingANode_ShouldReturnExpectedListSize() 
+    {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+    
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.append(myFourthNode);
+        
+        INode searchNode = myLinkedList.index(40);
+
+        INode startNode = myLinkedList.remove(searchNode);
+
+        int size = myLinkedList.Listsize();
+        Assert.assertEquals(3 , size);
+    }
 
 }
