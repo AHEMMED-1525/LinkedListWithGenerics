@@ -38,12 +38,16 @@ public class MyLinkedList {
 	        }
 	    }
 	    public void insert(INode myNode , INode newNode) {
-	    	/* store the node in tempNode
-	    	 * Initialize previous node to point new node
+	    	 /* Initialize previous node to point new node
 	    	 * make new node point to tempNode 
 	    	 */
 	        INode tempNode = myNode.getNext();  
 	        myNode.setNext(newNode);         
 	        newNode.setNext(tempNode);
+	    }
+	    public INode pop() {
+	        INode tempNode = this.head;         
+	        this.head = head.getNext();        
+	        return tempNode;
 	    }
 }

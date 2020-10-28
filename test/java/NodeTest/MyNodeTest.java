@@ -21,7 +21,7 @@ public class MyNodeTest {
 	}
 	// Adding to the top
     @Test
-    public void given3Numbers_WhenAddedToLinkedList_ShouldBeAddedToTop()
+    public void given3NumbersWhenAddedToLinkedListShouldBeAddedToTop()
     {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
@@ -29,7 +29,6 @@ public class MyNodeTest {
 
         //create a linked list
         MyLinkedList myLinkedList = new MyLinkedList();
-        //add nodes to the linked list
         myLinkedList.add(myFirstNode);
         myLinkedList.add(mySecondNode);
         myLinkedList.add(myThirdNode);
@@ -45,12 +44,12 @@ public class MyNodeTest {
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(56);
 
-        //create a linked list
         MyLinkedList myLinkedList = new MyLinkedList();
-        //add nodes to the linked list
+
         myLinkedList.append(myFirstNode);
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
+        
         boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
         Assert.assertTrue(result);
     }
@@ -62,13 +61,33 @@ public class MyNodeTest {
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(56);
 
-        //create a linked list
         MyLinkedList myLinkedList = new MyLinkedList();
-        //add nodes to the linked list
+        
         myLinkedList.add(myFirstNode);
         myLinkedList.append(myThirdNode);
         myLinkedList.insert(myFirstNode , mySecondNode);
+        
         boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
+        Assert.assertTrue(result);
+    }
+    // Delete First Element of Sequence
+    @Test
+    public void givenFirstElementWhenDelete()
+    {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        
+        //Using pop can delete the first Element
+        myLinkedList.pop();
+        
+        boolean result = myLinkedList.head.equals(mySecondNode);
         Assert.assertTrue(result);
     }
 
