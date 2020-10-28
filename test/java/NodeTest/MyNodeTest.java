@@ -107,5 +107,23 @@ public class MyNodeTest {
         INode result = myLinkedList.popLast();
         Assert.assertEquals(myThirdNode,  result);
     }
+    // Search a Key value
+    @Test
+    public void given3NumbersWhenMatchesValueShouldSearchNodeTrue() 
+    {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        
+        //search a node where for the key value 30
+        boolean result = myLinkedList.search(mySecondNode);
+        Assert.assertTrue(result);
+    }
 
 }

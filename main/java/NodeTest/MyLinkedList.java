@@ -66,4 +66,20 @@ public class MyLinkedList {
 	        tempNode = tempNode.getNext();
 	        return tempNode;
 	    }
+	    //Search node for value 30
+	    public boolean search(INode searchnode) 
+	    {
+	        INode tempNode = this.head;
+	        while (tempNode != searchnode && tempNode.getNext() != this.tail)
+	        {
+	            tempNode = tempNode.getNext();
+	        }
+	        if (tempNode == searchnode)
+	        {
+	            return true;
+	        }
+	        else
+	            return false;
+
+	    }
 }
