@@ -85,10 +85,27 @@ public class MyNodeTest {
         myLinkedList.append(myThirdNode);
         
         //Using pop can delete the first Element
-        myLinkedList.pop();
+        myLinkedList.popFirst();
         
         boolean result = myLinkedList.head.equals(mySecondNode);
         Assert.assertTrue(result);
+    }
+    // Deleting Laast Element of Sequence
+    @Test
+    public void givenLastElementWhenDeletingShouldPassLinkedListResult() 
+    {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+     
+        MyLinkedList myLinkedList = new MyLinkedList();
+
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        
+        INode result = myLinkedList.popLast();
+        Assert.assertEquals(myThirdNode,  result);
     }
 
 }

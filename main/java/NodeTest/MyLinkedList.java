@@ -37,7 +37,8 @@ public class MyLinkedList {
 	            this.tail = newNode;
 	        }
 	    }
-	    public void insert(INode myNode , INode newNode) {
+	    public void insert(INode myNode , INode newNode) 
+	    {
 	    	 /* Initialize previous node to point new node
 	    	 * make new node point to tempNode 
 	    	 */
@@ -45,9 +46,23 @@ public class MyLinkedList {
 	        myNode.setNext(newNode);         
 	        newNode.setNext(tempNode);
 	    }
-	    public INode pop() {
+	    // pop First Element
+	    public INode popFirst() 
+	    {
 	        INode tempNode = this.head;         
 	        this.head = head.getNext();        
+	        return tempNode;
+	    }
+	    // Pop Last ELement
+	    public INode popLast()
+	    {
+	        INode tempNode = this.head;
+	        while (!tempNode.getNext().equals(tail))
+	        {
+	            tempNode = tempNode.getNext();
+	        }
+	        this.tail = tempNode;          
+	        tempNode = tempNode.getNext();
 	        return tempNode;
 	    }
 }
